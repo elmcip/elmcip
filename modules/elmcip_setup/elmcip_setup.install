@@ -83,3 +83,28 @@ function elmcip_setup_update_7005() {
 function elmcip_setup_update_7006() {
   module_enable(array('elmcip_layout'), FALSE);
 }
+
+/**
+ * Removes nodes without bundle/module (faq).
+ */
+function elmcip_setup_update_7007() {
+  $nodes_faq = array(
+     967,
+     970,
+     972,
+    1001,
+    1002,
+    1105,
+    1106,
+    1287,
+    1500,
+  );
+  node_delete_multiple($nodes_faq);
+}
+
+/**
+ * Removes deleted faq vocabulary and terms.
+ */
+function elmcip_setup_update_7008() {
+  taxonomy_vocabulary_delete(5);
+}
