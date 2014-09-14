@@ -88,10 +88,105 @@ function elmcip_setup_update_7006() {
  * Removes nodes without bundle/module (faq).
  */
 function elmcip_setup_update_7007() {
+  $instances = array(
+    array(
+      'entity_type' => 'node',
+      'bundle' => 'faq',
+      'field_name' => 'taxonomyextra',
+    ),
+    // array(
+    //   'entity_type' => 'comment',
+    //   'bundle' => 'comment_node_faq',
+    //   'field_name' => 'comment_body',
+    // ),
+  );
+
+  $schema = array(
+    'fields' => array(
+      'entity_type' => array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'bundle' => array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => FALSE,
+        'default' => '',
+      ),
+      'deleted' => array(
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'entity_id' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'revision_id' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'delta' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'field_pubtype_tax_tid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+  );
+
+  db_create_table('field_revision_taxonomyextra', $schema);
+
+
+  foreach ($instances as $key => $instance) {
+    // // Mark the field instance for deletion.
+    // db_update('field_config_instance')
+    //   ->fields(array('deleted' => 1))
+    //   ->condition('field_name', $instance['field_name'])
+    //   ->condition('entity_type', $instance['entity_type'])
+    //   ->condition('bundle', $instance['bundle'])
+    //   ->execute();
+
+    // // Clear the cache.
+    // field_cache_clear();
+
+    // // Mark instance data for deletion (field_storage_delete_instance).
+    $field = field_info_field($instance['field_name']);
+
+    // // Act on deletion of a field instance.
+    // $table_name = _field_sql_storage_tablename($field);
+    // db_update($table_name)
+    //   ->fields(array('deleted' => 1))
+    //   ->condition('entity_type', $instance['entity_type'])
+    //   ->condition('bundle', $instance['bundle'])
+    //   ->execute();
+
+    // // Let modules react to the deletion of the instance (field_storage_delete_instance).
+    // module_invoke_all('field_delete_instance', $instance);
+
+    // // Delete fields, nodes and content type.
+    field_delete_field($field);
+    // node_type_delete($instance['entity_type', $instance['bundle']];
+  }
+}
+
+/**
+ * Removes deleted faq vocabulary, terms and nodes.
+ */
+function elmcip_setup_update_7008() {
   $nodes_faq = array(
-     967,
-     970,
-     972,
+    967,
+    970,
+    972,
     1001,
     1002,
     1105,
@@ -99,12 +194,7 @@ function elmcip_setup_update_7007() {
     1287,
     1500,
   );
-  node_delete_multiple($nodes_faq);
-}
 
-/**
- * Removes deleted faq vocabulary and terms.
- */
-function elmcip_setup_update_7008() {
   taxonomy_vocabulary_delete(5);
+  node_delete_multiple($nodes_faq);
 }
