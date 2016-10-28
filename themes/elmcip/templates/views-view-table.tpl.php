@@ -40,6 +40,9 @@
       <?php foreach ($row as $field => $content): ?>
         <td <?php if ($field_classes[$field][$row_count]) { print 'class="'. $field_classes[$field][$row_count] . '" '; } ?><?php print drupal_attributes($field_attributes[$field][$row_count]); ?>>
           <?php print $content; ?>
+          <?php if ($contextual_node): ?>
+            <?php print $contextual_node[$id]; ?>
+          <?php endif; ?>
         </td>
       <?php endforeach; ?>
     </tr>
