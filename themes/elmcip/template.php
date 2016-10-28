@@ -176,3 +176,22 @@ function elmcip_panels_default_style_render_region($variables) {
   $output .= implode('', $variables['panes']);
   return $output;
 }
+
+function elmcip_preprocess_views_view_table(&$vars) {
+  $view = $vars['view'];
+  foreach ($view->result as $delta => $item) {
+    if (isset($item->nid)) {
+
+      $vars['classes'][$delta][] = 'contextual-links-region';
+      $vars['classes_array'][$delta] = implode(' ', $vars['classes'][$delta]);
+
+      $element = element_info('contextual_links');
+      $element['#contextual_links'] = array(
+        'node' => array(
+          'node',
+          array($item->nid),
+      ));
+      $vars['contextual_node'][$delta] = drupal_render($element);
+    }
+  }
+}
