@@ -2413,15 +2413,6 @@ function elmcip_permissions_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'flag librarian_approved'.
-  $permissions['flag librarian_approved'] = array(
-    'name' => 'flag librarian_approved',
-    'roles' => array(
-      'Librarian' => 'Librarian',
-    ),
-    'module' => 'flag',
-  );
-
   // Exported permission: 'generate features'.
   $permissions['generate features'] = array(
     'name' => 'generate features',
@@ -2559,15 +2550,6 @@ function elmcip_permissions_user_default_permissions() {
       'supereditor' => 'supereditor',
     ),
     'module' => 'locale',
-  );
-
-  // Exported permission: 'unflag librarian_approved'.
-  $permissions['unflag librarian_approved'] = array(
-    'name' => 'unflag librarian_approved',
-    'roles' => array(
-      'Librarian' => 'Librarian',
-    ),
-    'module' => 'flag',
   );
 
   // Exported permission: 'use bulk exporter'.
