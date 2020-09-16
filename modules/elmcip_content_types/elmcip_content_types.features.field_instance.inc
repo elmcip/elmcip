@@ -119,7 +119,7 @@ function elmcip_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 62,
+        'weight' => 63,
       ),
       'full' => array(
         'label' => 'above',
@@ -333,7 +333,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
           'custom_title' => '',
         ),
         'type' => 'link_default',
-        'weight' => 30,
+        'weight' => 31,
       ),
       'full' => array(
         'label' => 'above',
@@ -401,6 +401,44 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'node-critical_writing-field_record_status_lib'.
+  $field_instances['node-critical_writing-field_record_status_lib'] = array(
+    'bundle' => 'critical_writing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 25,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_record_status_lib',
+    'label' => 'Librarian status',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 42,
     ),
   );
 
@@ -1180,7 +1218,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
           'custom_title' => '',
         ),
         'type' => 'link_default',
-        'weight' => 29,
+        'weight' => 30,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1262,7 +1300,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
           'custom_title' => '',
         ),
         'type' => 'link_default',
-        'weight' => 31,
+        'weight' => 32,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1323,7 +1361,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
           'custom_title' => '',
         ),
         'type' => 'link_default',
-        'weight' => 30,
+        'weight' => 31,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1622,6 +1660,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
   t('Indicate the year that this platform/software was first released.
 <br>Format: 2017');
   t('KB Editor Notes');
+  t('Librarian status');
   t('Link to a stable URL documenting the version history of the software or platform, if available. Indicate the nature of the link using the title field (e.g. Wikipedia version history of WordPerfect).');
   t('Narrabase.net entry');
   t('PO.EX entry');

@@ -29,6 +29,7 @@ features[field_instance][] = node-critical_writing-field_criticalw_platform_ref
 features[field_instance][] = node-critical_writing-field_cw_in_platform_software
 features[field_instance][] = node-critical_writing-field_doi
 features[field_instance][] = node-critical_writing-field_po_ex_entry
+features[field_instance][] = node-critical_writing-field_record_status_lib
 features[field_instance][] = node-databases_and_archives-field_database_platform_ref
 features[field_instance][] = node-platform_software-field_editorial_notes
 features[field_instance][] = node-platform_software-field_platform_developers

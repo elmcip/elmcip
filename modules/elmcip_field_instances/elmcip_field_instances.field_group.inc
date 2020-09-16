@@ -470,6 +470,7 @@ function elmcip_field_instances_field_group_info() {
     'children' => array(
       0 => 'field_editorial_notes',
       1 => 'field_record_status_tax',
+      2 => 'field_record_status_lib',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -985,7 +986,7 @@ function elmcip_field_instances_field_group_info() {
     'children' => array(
       0 => 'field_editorial_notes',
       1 => 'field_record_status_tax',
-      2 => 'field_field_record_status_lib',
+      2 => 'field_record_status_lib',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -1195,7 +1196,7 @@ function elmcip_field_instances_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Meta data',
-    'weight' => '44',
+    'weight' => '45',
     'children' => array(
       0 => 'purl',
       1 => 'author',

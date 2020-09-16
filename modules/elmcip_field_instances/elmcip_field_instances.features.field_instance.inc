@@ -423,7 +423,7 @@ function elmcip_field_instances_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 28,
+        'weight' => 29,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -591,7 +591,7 @@ function elmcip_field_instances_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 29,
+        'weight' => 30,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -723,7 +723,7 @@ function elmcip_field_instances_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 67,
+        'weight' => 68,
       ),
       'full' => array(
         'label' => 'above',
@@ -1120,7 +1120,7 @@ function elmcip_field_instances_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 66,
+        'weight' => 67,
       ),
       'full' => array(
         'label' => 'above',
@@ -1489,7 +1489,7 @@ function elmcip_field_instances_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 25,
+        'weight' => 26,
       ),
       'full' => array(
         'label' => 'above',
@@ -1534,7 +1534,7 @@ function elmcip_field_instances_field_default_field_instances() {
         'size' => 200,
       ),
       'type' => 'text_textfield',
-      'weight' => 42,
+      'weight' => 43,
     ),
   );
 
@@ -1714,7 +1714,7 @@ function elmcip_field_instances_field_default_field_instances() {
           'custom_title' => '',
         ),
         'type' => 'link_default',
-        'weight' => 31,
+        'weight' => 32,
       ),
       'full' => array(
         'label' => 'above',
@@ -1825,7 +1825,7 @@ function elmcip_field_instances_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 51,
+        'weight' => 52,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -2820,7 +2820,7 @@ For an article published in a weekly or monthly periodical, enter the day first,
           'file_view_mode' => 'full',
         ),
         'type' => 'file_rendered',
-        'weight' => 50,
+        'weight' => 51,
       ),
       'full' => array(
         'label' => 'above',
@@ -2953,7 +2953,7 @@ For an article published in a weekly or monthly periodical, enter the day first,
           'colorbox_node_style_first' => '',
         ),
         'type' => 'colorbox',
-        'weight' => 34,
+        'weight' => 35,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -3506,7 +3506,7 @@ For an article published in a weekly or monthly periodical, enter the day first,
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 68,
+        'weight' => 69,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -3631,7 +3631,7 @@ For an article published in a weekly or monthly periodical, enter the day first,
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 65,
+        'weight' => 66,
       ),
       'full' => array(
         'label' => 'above',
@@ -3694,7 +3694,7 @@ For an article published in a weekly or monthly periodical, enter the day first,
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 63,
+        'weight' => 64,
       ),
       'full' => array(
         'label' => 'above',
@@ -3805,7 +3805,7 @@ For an article published in a weekly or monthly periodical, enter the day first,
           'link' => TRUE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 32,
+        'weight' => 33,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -4095,7 +4095,7 @@ For an article published in a weekly or monthly periodical, enter the day first,
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 64,
+        'weight' => 65,
       ),
       'full' => array(
         'label' => 'above',
@@ -4248,7 +4248,7 @@ For an article published in a weekly or monthly periodical, enter the day first,
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 33,
+        'weight' => 34,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -4482,7 +4482,7 @@ For an article published in a weekly or monthly periodical, enter the day first,
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 61,
+        'weight' => 62,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -4713,7 +4713,7 @@ For an article published in a weekly or monthly periodical, enter the day first,
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 69,
+        'weight' => 70,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -5229,7 +5229,7 @@ For an article published in a weekly or monthly periodical, enter the day first,
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 27,
+        'weight' => 28,
       ),
       'full' => array(
         'label' => 'above',
@@ -17152,7 +17152,7 @@ If you wish to supply your own latitude and longitude, you may enter them above.
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 25,
+        'weight' => 26,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -17290,7 +17290,7 @@ If you wish to supply your own latitude and longitude, you may enter them above.
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 53,
+        'weight' => 54,
       ),
       'full' => array(
         'label' => 'inline',
@@ -17799,7 +17799,7 @@ If you wish to supply your own latitude and longitude, you may enter them above.
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 37,
+        'weight' => 38,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -18174,7 +18174,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 21,
+        'weight' => 22,
       ),
       'full' => array(
         'label' => 'above',
@@ -18243,7 +18243,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
           'custom_title' => '',
         ),
         'type' => 'link_default',
-        'weight' => 26,
+        'weight' => 27,
       ),
       'full' => array(
         'label' => 'inline',
@@ -18360,7 +18360,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 43,
+        'weight' => 44,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -18481,7 +18481,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
           'custom_title' => '',
         ),
         'type' => 'link_default',
-        'weight' => 27,
+        'weight' => 28,
       ),
       'full' => array(
         'label' => 'inline',
@@ -19066,7 +19066,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
           'file_view_mode' => 'default',
         ),
         'type' => 'file_rendered',
-        'weight' => 42,
+        'weight' => 43,
       ),
       'full' => array(
         'label' => 'above',
@@ -19200,7 +19200,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
           'colorbox_node_style_first' => '',
         ),
         'type' => 'colorbox',
-        'weight' => 41,
+        'weight' => 42,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -19688,7 +19688,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
           'custom_title' => '',
         ),
         'type' => 'link_default',
-        'weight' => 28,
+        'weight' => 29,
       ),
       'full' => array(
         'label' => 'inline',
@@ -19785,7 +19785,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 34,
+        'weight' => 35,
       ),
       'full' => array(
         'label' => 'above',
@@ -19910,7 +19910,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 32,
+        'weight' => 33,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -20045,7 +20045,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 33,
+        'weight' => 34,
       ),
       'full' => array(
         'label' => 'above',
@@ -20151,7 +20151,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 35,
+        'weight' => 36,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -20272,6 +20272,38 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
     'widget_type' => 'text_textarea',
   );
 
+  // Exported field_instance: 'node-work-field_record_status_lib'.
+  $field_instances['node-work-field_record_status_lib'] = array(
+    'bundle' => 'work',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 21,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_record_status_lib',
+    'label' => 'Librarian status',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 11,
+    ),
+  );
+
   // Exported field_instance: 'node-work-field_record_status_tax'.
   $field_instances['node-work-field_record_status_tax'] = array(
     'bundle' => 'work',
@@ -20379,7 +20411,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 36,
+        'weight' => 37,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -20532,7 +20564,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 24,
+        'weight' => 25,
       ),
       'ds_weight' => array(
         'label' => 'hidden',
@@ -21142,7 +21174,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 23,
+        'weight' => 24,
       ),
       'full' => array(
         'label' => 'above',
@@ -21398,6 +21430,7 @@ For an article published in a weekly or monthly periodical, enter the day first,
   t('Language');
   t('Language of original description');
   t('Last name');
+  t('Librarian status');
   t('License');
   t('Location');
   t('Mark the event(s) where the work has been presented. The event’s name will autocomplete if it is in the database. If the event is not yet in the database, <a href="/node/add/event" target="_blank">add the event</a>.');
