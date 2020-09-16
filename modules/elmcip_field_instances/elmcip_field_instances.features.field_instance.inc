@@ -18219,7 +18219,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
         'size' => 200,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
