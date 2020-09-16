@@ -39,6 +39,15 @@ function elmcip_field_instances_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'create field_record_status_lib'.
+  $permissions['create field_record_status_lib'] = array(
+    'name' => 'create field_record_status_lib',
+    'roles' => array(
+      'Librarian' => 'Librarian',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'create field_record_status_tax'.
   $permissions['create field_record_status_tax'] = array(
     'name' => 'create field_record_status_tax',
@@ -113,6 +122,15 @@ function elmcip_field_instances_user_default_permissions() {
       'administrator' => 'administrator',
       'editor' => 'editor',
       'supereditor' => 'supereditor',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit field_record_status_lib'.
+  $permissions['edit field_record_status_lib'] = array(
+    'name' => 'edit field_record_status_lib',
+    'roles' => array(
+      'Librarian' => 'Librarian',
     ),
     'module' => 'field_permissions',
   );
@@ -198,6 +216,15 @@ function elmcip_field_instances_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'edit own field_record_status_lib'.
+  $permissions['edit own field_record_status_lib'] = array(
+    'name' => 'edit own field_record_status_lib',
+    'roles' => array(
+      'Librarian' => 'Librarian',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'edit own field_record_status_tax'.
   $permissions['edit own field_record_status_tax'] = array(
     'name' => 'edit own field_record_status_tax',
@@ -267,6 +294,17 @@ function elmcip_field_instances_user_default_permissions() {
       'editor' => 'editor',
       'submitter' => 'submitter',
       'supereditor' => 'supereditor',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view field_record_status_lib'.
+  $permissions['view field_record_status_lib'] = array(
+    'name' => 'view field_record_status_lib',
+    'roles' => array(
+      'Librarian' => 'Librarian',
+      'administrative editor' => 'administrative editor',
+      'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -343,6 +381,15 @@ function elmcip_field_instances_user_default_permissions() {
       'editor' => 'editor',
       'submitter' => 'submitter',
       'supereditor' => 'supereditor',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_record_status_lib'.
+  $permissions['view own field_record_status_lib'] = array(
+    'name' => 'view own field_record_status_lib',
+    'roles' => array(
+      'Librarian' => 'Librarian',
     ),
     'module' => 'field_permissions',
   );
