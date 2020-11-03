@@ -19,7 +19,7 @@ final class Kubed
 
     public function __construct()
     {
-        exec('kubed version --client', $kubed);
+        exec('kubed -version', $kubed);
         if (!$kubed) {
             throw new \RuntimeException(
                 'kubed is not installed. Read: TBD' . PHP_EOL
@@ -31,7 +31,7 @@ final class Kubed
 
     public function getVersion(): string
     {
-        return $this->version;
+        return $this->version[0];
     }
 
     public function renew(): string
