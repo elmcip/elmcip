@@ -82,7 +82,7 @@ final class Pods
 
     public function getPods(): Pods
     {
-        if (!$this->kubectl->version()) {
+        if (!$this->kubectl->getVersion()) {
             $this->kubed->renew();
         }
 
