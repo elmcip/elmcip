@@ -36,7 +36,8 @@ final class Kubed
 
     public function renew()
     {
-        return exec('kubed -renew ' . CLUSTER, $login);
+        exec('kubed -renew ' . CLUSTER, $login);
+        return $login;
     }
 }
 
@@ -64,7 +65,8 @@ final class Kubectl
 
     public function pod()
     {
-        return exec('kubectl get pod -n ' . KUBERNETES_NAME_SPACE, $results);
+        exec('kubectl get pod -n ' . KUBERNETES_NAME_SPACE, $results);
+        return $results;
     }
 }
 
@@ -84,9 +86,9 @@ final class Pods
     {
         if (!$this->kubectl->pod()) {
             $foo = $this->kubed->renew();
-            $results = $this->kubectl->pod();
         }
 
+        $results = $this->kubectl->pod();
         $object = new self(new Kubectl(), new Kubed());
         $pods = $object->parseResult($results);
 
