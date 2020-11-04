@@ -34,6 +34,12 @@ final class Kubed
         return $this->version[0];
     }
 
+    public function init()
+    {
+        exec('kubed -name nird-trd -api-server https://api.nird-trd.sigma2.no -client-id ad21bc46-d77d-4527-8a12-bf7984860957 -issuer https://nird-trd-ti.dataporten-api.no', $results);
+        return $results;
+    }
+
     public function renew()
     {
         exec('kubed -renew ' . CLUSTER, $login);
@@ -85,10 +91,21 @@ final class Pods
     public function getPods(): Pods
     {
         if (!$this->kubectl->pod()) {
-            $foo = $this->kubed->renew();
+            $renew = $this->kubed->renew();
         }
 
         $results = $this->kubectl->pod();
+
+        if (!$results) {
+            $foo = $this->kubed->init();
+            $results = $this->kubectl->pod();
+            if (!$results) {
+                throw new Exception(
+                    'Unable to get pods. ' . PHP_EOL . $renew[0] . PHP_EOL
+                );
+            }
+        }
+
         $object = new self(new Kubectl(), new Kubed());
         $pods = $object->parseResult($results);
 
