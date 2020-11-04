@@ -22,7 +22,7 @@ final class Kubed
         exec('kubed -version', $kubed);
         if (!$kubed) {
             throw new \RuntimeException(
-                'kubed is not installed. Read: TBD' . PHP_EOL
+                'kubed is not installed. Read: https://github.com/Uninett/kubed' . PHP_EOL
             );
         }
 
