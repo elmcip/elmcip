@@ -944,7 +944,7 @@ function elmcip_field_instances_field_default_field_instances() {
     'bundle' => 'critical_writing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the name of the author. The author\'s name will autocomplete if it is in the database. If the author is not yet in the database, <a href="/node/add/person" target="_blank">add the author</a>. Use additional fields for co-authors.',
+    'description' => 'Enter the name of the author. The author\'s name will autocomplete if it is in the database. If the author is not yet in the database, <a href="/node/add/person" target="_blank">add the author</a>. No additional fields for co-authors allowed!!!',
     'display' => array(
       3 => array(
         'label' => 'hidden',
@@ -21321,7 +21321,7 @@ All DOI numbers begin with a 10 and contain a prefix and a suffix separated by a
   t('Enter the name of organizations this person is affiliated with. Examples include: artist-and-writer collectives, employers, nonprofit organizations, research groups, universities. The text in the short biography can elaborate and clarify the nature and duration of the person\'s affiliation with this organization. The organization will autocomplete if it is in the database. If the organization is not yet in the database, <a href="/node/add/organization" target="_blank">add the organization</a>.');
   t('Enter the name of the author discussed in this note. This is an autocomplete field that will only complete on authors that already have records in the knowledge base. If the work is not in the KB, first <a href="/node/add/person" target="_blank">add the person</a>. ');
   t('Enter the name of the author. The author\'s name will autocomplete if it is in the database. If the author is not yet in the database, <a href="/node/add/person" target="_blank">add the author</a>.');
-  t('Enter the name of the author. The author\'s name will autocomplete if it is in the database. If the author is not yet in the database, <a href="/node/add/person" target="_blank">add the author</a>. Use additional fields for co-authors.');
+  t('Enter the name of the author. The author\'s name will autocomplete if it is in the database. If the author is not yet in the database, <a href="/node/add/person" target="_blank">add the author</a>. No additional fields for co-authors allowed!!!');
   t('Enter the name of the organization that arranged the event. The organization will autocomplete if it is in the database. If the organization is not yet in the database, <a href="/node/add/organization" target="_blank">add the organization</a>.');
   t('Enter the name of the person or people who developed this resource. The author\'s name will autocomplete if it is in the database. If the author is not yet in the database, <a href="/node/add/person" target="_blank">add the author</a>.');
   t('Enter the name of the publisher of book, title of journal, or other publishing entity. The publisher\'s name will autocomplete if it is in the database. If the publisher is not yet in the database, <a href="/node/add/publisher" target="_blank">add the publisher</a>.');
