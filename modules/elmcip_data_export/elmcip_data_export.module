@@ -193,7 +193,7 @@ function elmcip_data_export_views_pre_build(&$view) {
 
   //
   foreach ($terms as $term) {
-      if ($term->vocabulary_machine_name == 'gender') {
+      if ($term->vocabulary_machine_name === 'gender') {
         unset($view->field['nothing']);
         $view->field['title']->options['label'] = t('Name');
       }
