@@ -51,13 +51,14 @@ function elmcip_data_export_views_pre_view($view, &$display_id, &$args) {
 }
 
 /**
- * Check for existing description.
+ * Create taxonomy term description missing if term do not have one.
  *
- * @param $term
+ * @param \stdClass $term
  *
  * @return string
+ *  Return taxonomy term description.
  */
-function elmcip_data_export_elmcip_term_description($term): string {
+function elmcip_data_export_elmcip_term_description(stdClass $term): string {
   if (taxonomy_term_edit_access($term)) {
     $edit_link = url('taxonomy/term/' . $term->tid . '/edit', array('query' => array('destination' => current_path())));
 
@@ -85,8 +86,8 @@ function elmcip_data_export_elmcip_term_description($term): string {
  */
 function elmcip_data_export_views_pre_build(&$view) {
   if ($view->name === 'elmcip_taxonomy_term' && $view->current_display === 'page') {
-    $terms = entity_load('taxonomy_term', array(arg(2)));
 
+    $terms = entity_load('taxonomy_term', [arg(2)]);
     foreach ($terms as $term) {
       if ($term->vocabulary_machine_name === 'gender') {
         unset($view->field['nothing']);
