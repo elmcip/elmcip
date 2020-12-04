@@ -23,6 +23,7 @@ function elmcip_data_export_views_pre_view($view, &$display_id, &$args) {
 
       $terms = entity_load('taxonomy_term', array(arg(2)));
       $term = $terms[$tid];
+
       if ($term->description) {
         $class = 'term_present';
       }
@@ -30,24 +31,7 @@ function elmcip_data_export_views_pre_view($view, &$display_id, &$args) {
         $class = 'term_missing';
       }
 
-      // Section that run if user can add or edit existing term.
-      if (taxonomy_term_edit_access($term)) {
-        $edit_link = url('taxonomy/term/' . $term->tid . '/edit', array('query' => array('destination' => current_path())));
-        if ($term->description) {
-          $content = t('@description <a href="@url">Edit term</a>', array(
-            '@description' => $term->description,
-            '@url' => $edit_link
-          ));
-        }
-        else {
-          $content = t('Taxonomy term description is missing. <a href="@url">Please add one</a>', array('@url' => $edit_link));
-        }
-      }
-      else {
-        if ($term->description) {
-          $content = t('@description', array('@description' => $term->description));
-        }
-      }
+      $content = elmcip_data_export_elmcip_term_description($term);
 
       // Add description and reorder description if more then one element.
       if ($content) {
@@ -68,6 +52,32 @@ function elmcip_data_export_views_pre_view($view, &$display_id, &$args) {
       }
     }
   }
+}
+
+/**
+ * Check for existing description.
+ *
+ * @param $term
+ *
+ * @return string
+ */
+function elmcip_data_export_elmcip_term_description($term): string {
+  if (taxonomy_term_edit_access($term)) {
+    $edit_link = url('taxonomy/term/' . $term->tid . '/edit', array('query' => array('destination' => current_path())));
+
+    if ($term->description) {
+      return t('@description <a href="@url">Edit term</a>', array(
+        '@description' => $term->description,
+        '@url' => $edit_link
+      ));
+    }
+
+    if (!$term->description) {
+      return t('Taxonomy term description is missing. <a href="@url">Please add one</a>', array('@url' => $edit_link));
+    }
+  }
+
+  return t('@description', array('@description' => $term->description));
 }
 
 /**
