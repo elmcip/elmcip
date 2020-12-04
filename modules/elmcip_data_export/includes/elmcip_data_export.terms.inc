@@ -13,25 +13,21 @@
 function elmcip_data_export_views_pre_view($view, &$display_id, &$args) {
   if ($view->name === 'elmcip_taxonomy_term' || $view->name === 'all_tags_by_frequency') {
     if ($display_id === 'page' || $display_id === 'page_1') {
-      $content = '';
-      $view->set_display('page_1');
-
       $tid = arg(2);
+      $class = 'term_missing';
       if (!$tid) {
         return;
       }
 
-      $terms = entity_load('taxonomy_term', array(arg(2)));
-      $term = $terms[$tid];
+      //$view->set_display('page_1');
 
-      if ($term->description) {
+      $terms = entity_load('taxonomy_term', [$tid]);
+
+      if ($terms[$tid]->description) {
         $class = 'term_present';
       }
-      else {
-        $class = 'term_missing';
-      }
 
-      $content = elmcip_data_export_elmcip_term_description($term);
+      $content = elmcip_data_export_elmcip_term_description($terms[$tid]);
 
       // Add description and reorder description if more then one element.
       if ($content) {
