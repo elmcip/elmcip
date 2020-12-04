@@ -122,8 +122,8 @@ function _elmcip_get_views($views, $type) {
  * @param $args
  */
 function elmcip_data_export_views_pre_view($view, &$display_id, &$args) {
-  if ($view->name == 'elmcip_taxonomy_term' || $view->name ==  'all_tags_by_frequency') {
-    if ($display_id == 'page' || $display_id == 'page_1') {
+  if ($view->name === 'elmcip_taxonomy_term' || $view->name === 'all_tags_by_frequency') {
+    if ($display_id === 'page' || $display_id === 'page_1') {
       $content = '';
 
       $tid = arg(2);
@@ -188,7 +188,7 @@ function elmcip_data_export_views_pre_view($view, &$display_id, &$args) {
  * @param $view
  */
 function elmcip_data_export_views_pre_build(&$view) {
-  if ($view->name == 'elmcip_taxonomy_term' && $view->current_display == 'page') {
+  if ($view->name === 'elmcip_taxonomy_term' && $view->current_display === 'page') {
     $terms = entity_load('taxonomy_term', array(arg(2)));
 
   //
