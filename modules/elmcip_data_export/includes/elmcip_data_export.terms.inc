@@ -3,8 +3,8 @@
 /**
  * Implements hook_views_pre_view().
  *
- * Checks if taxonomy term is missing and user is allowed to alter/add term
- * description. If so it add a edit link to term.
+ * Checks if taxonomy term description is missing. If user is allowed to
+ * alter/add the description add a edit link to views header section.
  *
  * @param $view
  * @param $display_id
