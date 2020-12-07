@@ -1,5 +1,17 @@
 <?php declare(strict_types=1);
 
+function elmcip_data_export_term_validate($view, $display_id) {
+  if ($view->name === 'elmcip_taxonomy_term' && $display_id === 'page') {
+    return TRUE;
+  }
+
+  if ($view->name === 'all_tags_by_frequency' && $display_id === 'page_1') {
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
 /**
  * Implements hook_views_pre_view().
  *
@@ -10,41 +22,38 @@
  * @param $display_id
  * @param $args
  */
-function elmcip_data_export_views_pre_view($view, &$display_id, &$args) {
-  if ($view->name === 'elmcip_taxonomy_term' || $view->name === 'all_tags_by_frequency') {
-    if ($display_id === 'page' || $display_id === 'page_1') {
-      $tid = arg(2);
-      $class = 'term_missing';
-      if (!$tid) {
-        return;
-      }
+function elmcip_data_export_views_pre_view(&$view, &$display_id, &$args) {
+  if (elmcip_data_export_term_validate($view, $display_id)) {
+    $tid = arg(2);
+    $class = 'term_missing';
+    if (!$tid) {
+      return;
+    }
 
-      //$view->set_display('page_1');
+    //$view->set_display('page_1');
 
-      $terms = entity_load('taxonomy_term', [$tid]);
+    $terms = entity_load('taxonomy_term', [$tid]);
+    if ($terms[$tid]->description) {
+      $class = 'term_present';
+    }
 
-      if ($terms[$tid]->description) {
-        $class = 'term_present';
-      }
+    $content = elmcip_data_export_elmcip_term_description($terms[$tid]);
 
-      $content = elmcip_data_export_elmcip_term_description($terms[$tid]);
+    // Add description and reorder description if more then one element.
+    if ($content) {
+      $header_options = [
+        'label' => t('Taxonomy term description'),
+        'content' => '<span class="' . $class . '">' . $content . '</span>',
+        'format' => '2',
+        'empty' => TRUE,
+      ];
+      $view->add_item($view->current_display, 'header', 'views', 'area', $header_options);
 
-      // Add description and reorder description if more then one element.
-      if ($content) {
-        $header_options = [
-          'label' => t('Taxonomy term description'),
-          'content' => '<span class="' . $class . '">' . $content . '</span>',
-          'format' => '2',
-          'empty' => TRUE,
-        ];
-        $view->add_item($view->current_display, 'header', 'views', 'area', $header_options);
-
-        $header = $view->display_handler->get_option('header');
-        if (count($header) > 1) {
-          $taxonomy = array_slice($header, -1, 1);
-          $header = array_merge($taxonomy, $header);
-          $view->display_handler->set_option('header', $header);
-        }
+      $header = $view->display_handler->get_option('header');
+      if (count($header) > 1) {
+        $taxonomy = array_slice($header, -1, 1);
+        $header = array_merge($taxonomy, $header);
+        $view->display_handler->set_option('header', $header);
       }
     }
   }
