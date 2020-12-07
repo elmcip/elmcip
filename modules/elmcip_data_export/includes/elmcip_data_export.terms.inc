@@ -12,6 +12,18 @@ function elmcip_data_export_term_validate($view, $display_id) {
   return FALSE;
 }
 
+function elmcip_data_export_validate_vocabulary(string $tid): bool {
+  $not_valid_vocabularies = ['news_tags'];
+  $terms = entity_load('taxonomy_term', [$tid]);
+  foreach ($terms as $term) {
+    if (in_array($term->vocabulary_machine_name, $not_valid_vocabularies, TRUE)) {
+      return FALSE;
+    }
+  }
+
+  return TRUE;
+}
+
 /**
  * Implements hook_views_pre_view().
  *
@@ -25,12 +37,15 @@ function elmcip_data_export_term_validate($view, $display_id) {
 function elmcip_data_export_views_pre_view(&$view, &$display_id, &$args) {
   if (elmcip_data_export_term_validate($view, $display_id)) {
     $tid = arg(2);
-    $class = 'term_missing';
     if (!$tid) {
       return;
     }
 
-    //$view->set_display('page_1');
+    if (!elmcip_data_export_validate_vocabulary($tid)) {
+      $view->set_display('page_1');
+    }
+
+    $class = 'term_missing';
 
     $terms = entity_load('taxonomy_term', [$tid]);
     if ($terms[$tid]->description) {
