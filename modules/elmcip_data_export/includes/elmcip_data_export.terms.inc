@@ -43,6 +43,7 @@ function elmcip_data_export_views_pre_view(&$view, &$display_id, &$args) {
 
     if (!elmcip_data_export_validate_vocabulary($tid)) {
       $view->set_display('page_1');
+      return;
     }
 
     $class = 'term_missing';

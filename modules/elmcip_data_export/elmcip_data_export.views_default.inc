@@ -3596,7 +3596,7 @@ function elmcip_data_export_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'View All Tags (<a href="http://elmcip.net/knowledgebase/all_tags_frequency">Frequency</a> or Alphabetically)';
+  $handler->display->display_options['header']['area']['content'] = 'View All Tags (<a href="/knowledgebase/all_tags_frequency">Frequency</a> or Alphabetically)';
   $handler->display->display_options['header']['area']['format'] = 'basic_text_editor';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
@@ -3637,7 +3637,7 @@ function elmcip_data_export_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('View All Tags (<a href="http://elmcip.net/knowledgebase/all_tags_frequency">Frequency</a> or Alphabetically)'),
+    t('View All Tags (<a href="/knowledgebase/all_tags_frequency">Frequency</a> or Alphabetically)'),
     t('Page'),
   );
   $export['all_tags'] = $view;
@@ -3657,11 +3657,7 @@ function elmcip_data_export_views_default_views() {
   $handler->display->display_options['title'] = 'All content tagged';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '21600';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '21600';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'mini';
@@ -3875,17 +3871,6 @@ function elmcip_data_export_views_default_views() {
   $handler->display->display_options['filters']['status_extra']['relationship'] = 'reverse_taxonomy_vocabulary_1_node';
   $handler->display->display_options['filters']['status_extra']['group'] = 1;
   /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['relationship'] = 'reverse_taxonomy_vocabulary_1_node';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'work' => 'work',
-    'critical_writing' => 'critical_writing',
-    'event' => 'event',
-    'teaching_resource' => 'teaching_resource',
-  );
-  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
   $handler->display->display_options['filters']['type_1']['table'] = 'node';
   $handler->display->display_options['filters']['type_1']['field'] = 'type';
@@ -3893,6 +3878,7 @@ function elmcip_data_export_views_default_views() {
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'work' => 'work',
     'critical_writing' => 'critical_writing',
+    'databases_and_archives' => 'databases_and_archives',
     'event' => 'event',
     'teaching_resource' => 'teaching_resource',
   );
@@ -3903,14 +3889,6 @@ function elmcip_data_export_views_default_views() {
   $handler->display->display_options['filters']['type_1']['expose']['identifier'] = 'type_1';
   $handler->display->display_options['filters']['type_1']['expose']['remember_roles'] = array(
     2 => '2',
-    7 => 0,
-    3 => 0,
-    1 => 0,
-    6 => 0,
-    5 => 0,
-    8 => 0,
-    4 => 0,
-    9 => 0,
   );
   $handler->display->display_options['filters']['type_1']['expose']['reduce'] = TRUE;
 
@@ -9114,6 +9092,20 @@ function elmcip_data_export_views_default_views() {
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'class_group' => 'class_group',
+    'work' => 'work',
+    'critical_writing' => 'critical_writing',
+    'databases_and_archives' => 'databases_and_archives',
+    'event' => 'event',
+    'notebook_entry' => 'notebook_entry',
+    'organization' => 'organization',
+    'person' => 'person',
+    'platform_software' => 'platform_software',
+    'publisher' => 'publisher',
+    'research_collection' => 'research_collection',
+    'teaching_resource' => 'teaching_resource',
+  );
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
@@ -9121,16 +9113,8 @@ function elmcip_data_export_views_default_views() {
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
   $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
     2 => '2',
-    7 => 0,
-    3 => 0,
-    1 => 0,
-    6 => 0,
-    5 => 0,
-    8 => 0,
-    4 => 0,
-    9 => 0,
-    10 => 0,
   );
+  $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
