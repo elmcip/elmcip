@@ -82,6 +82,17 @@ function elmcip_preprocess_node(&$variables) {
     }
 
   }
+
+  if ($variables['view_mode'] === 'teaser' && $variables['type'] === 'story') {
+    $variables['classes_array'][] = 'two-col';
+    $variables["title_attributes_array"]["class"][] = 'item';
+    $post_date = format_date($variables['node']->created, 'date_only_month_spelled');
+    $variables['submitted'] =
+      t(
+      'Submitted by !username', ['!username' => $variables['name']]
+      )
+      . '<br><span class="submitted-date">' . $post_date . '</span>';
+  }
 }
 
 /**

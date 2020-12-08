@@ -22,6 +22,7 @@ stylesheets[all][]        = css/media-elements.css
 stylesheets[all][]        = css/quote.css
 stylesheets[all][]        = css/typography.css
 stylesheets[all][]        = css/autocomplete.css
+stylesheets[all][]        = css/two-col.css
 stylesheets[print][]      = css/print.css
 
 regions[help]           = Help

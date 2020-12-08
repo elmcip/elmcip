@@ -145,7 +145,7 @@ body {
   margin-right: -760px; /* LTR */ /* Negative value of #content's width + left margin. */
 }
 
-.no-sidebars.page-news #content,
+.no-sidebars.page-taxonomy #content,
 .no-sidebars.node-type-page #content,
 .no-sidebars.node-type-story #content {
   margin-right: -800px;
